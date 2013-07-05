@@ -17,6 +17,13 @@
     </head>
     <body>
         <script type="text/javascript">
+            var w = 500;
+            var h = 100;
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+            
             var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19, 14, 11, 22, 29, 11, 13, 12, 17, 18, 10, 24, 18, 25, 9, 3 ];
             
             d3.select("body").selectAll("div")
