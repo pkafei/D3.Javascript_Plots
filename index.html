@@ -25,16 +25,15 @@
                         .attr("height", h);
             
             var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19, 14, 11, 22, 29, 11, 13, 12, 17, 18, 10, 24, 18, 25, 9, 3 ];
-            
-            d3.select("body").selectAll("div")
+            svg.selectAll("rect")
                 .data(dataset)
                 .enter()
-                .append("div")
-                .attr("class", "bar")
-                .style("height", function(d) {
-                    var barHeight = d * 5;
-                    return barHeight + "px";
-                });
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", 20)
+                .attr("height", 100);
+
         </script>
     </body>
 </html>
