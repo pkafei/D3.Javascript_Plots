@@ -61,11 +61,16 @@
                                              return d[2]; })])
                                  .range([2, 5]);
                                     
-            // Create the X Axis element                     
+            // Create the Y Axis element                     
+            var yAxis = d3.svg.axis()
+                              .scale(yScale)
+                              .orient("left")
+                              .ticks(5); 
+            // Create X Asis
             var xAxis = d3.svg.axis()
                               .scale(xScale)
                               .orient("bottom")
-                              .ticks(5); //Set rough # of ticks
+                              .ticks(5); 
 
             // Create SVG element
             var svg = d3.select("body")
@@ -104,7 +109,13 @@
                 .attr("font-size", "15px")
                 .attr("fill", "red");
             
-            //Create X axis
+            //Create Y axis
+            svg.append("g")
+                .attr("class", "axis") //Assign "axis" class
+                .attr("transform", "translate(" + padding + ",0)")
+                .call(yAxis);
+
+            // Create X axis
             svg.append("g")
                 .attr("class", "axis") //Assign "axis" class
                 .attr("transform", "translate(0," + (h - padding) + ")")
