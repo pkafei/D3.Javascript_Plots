@@ -106,6 +106,7 @@
             //Create X axis
             svg.append("g")
                 .attr("class", "axis") //Assign "axis" class
+                .attr("transform", "translate(0," + (h - padding) + ")")
                 .call(xAxis);
                 
         </script>
